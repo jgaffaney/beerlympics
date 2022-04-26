@@ -1,15 +1,16 @@
 import React from 'react';
 
-// This is one of our simplest components
-// It doesn't have local state,
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is'
-
 function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p>This about page is for anyone to read!</p>
+        <p>The Beer Olympics are in their 4th year and growing every year.  
+          This year, we are moving registration, brackets, scores, and results online!!
+          
+          Many details are still be worked out but this is where you will register your team and add teammates. 
+          There will also be a spot for free agents that people will be able to contact and add to their teams.
+
+          Much more to come!</p>
       </div>
     </div>
   );
