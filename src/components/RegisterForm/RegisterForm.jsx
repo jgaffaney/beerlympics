@@ -71,6 +71,16 @@ function RegisterForm() {
               <input type="text" name="agency" id="agency"
               onChange={e=> setAgency(e.target.value)}/>
             </label>)}
+        <div>
+          <label htmlFor="team">
+            Team:
+            <select name="team" id="team">
+              <option value="Team1">Team 1</option>
+              <option value="Team2">Team 2</option>
+              <option value="Team3">Team 3</option>
+            </select>
+          </label>
+        </div>
       </div>
       <div>
         <input className="btn" type="submit" name="submit" value="Register" />
