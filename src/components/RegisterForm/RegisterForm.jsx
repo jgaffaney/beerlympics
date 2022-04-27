@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function RegisterForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [responder, setResponder] = useState('');
+  const [responder, setResponder] = useState(false);
   const [agency, setAgency] = useState('');
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
@@ -63,7 +63,7 @@ function RegisterForm() {
             name="firstResponder" 
             id="firstResponder"
             value={responder}
-            onChange={e => setResponder(e.target.value)}/>
+            onChange={e => setResponder(!responder)}/>
         </label>
       </div>
       <div>
