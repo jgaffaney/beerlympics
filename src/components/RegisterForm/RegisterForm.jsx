@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function RegisterForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [responder, setResponder] = useState('');
+  const [responder, setResponder] = useState(false);
   const [agency, setAgency] = useState('');
   const errors = useSelector((store) => store.errors);
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ function RegisterForm() {
         agency: agency,
       },
     });
-  }; 
+  }; // end registerUser
 
   return (
     <form className="formPanel" onSubmit={registerUser}>
@@ -62,15 +62,27 @@ function RegisterForm() {
             type="checkbox" 
             name="firstResponder" 
             id="firstResponder"
-            value={firstResponder}
-            onChange={e => setResponder(e.target.value)}/>
+            value={responder}
+            onChange={e => setResponder(!responder)}/>
         </label>
+      </div>
+      <div>
         {responder &&
-          (<label htmlFor="agency">
-              Agency (optional):
-              <input type="text" name="agency" id="agency"
-              onChange={e=> setAgency(e.target.value)}/>
-            </label>)}
+        (<label htmlFor="agency">
+            Agency (optional):
+            <input type="text" name="agency" id="agency"
+            onChange={e=> setAgency(e.target.value)}/>
+          </label>)}
+      </div>
+      <div>
+        <label htmlFor="team">
+          Team:
+          <select name="team" id="team">
+            <option value="Team1">Team 1</option>
+            <option value="Team2">Team 2</option>
+            <option value="Team3">Team 3</option>
+          </select>
+        </label>
       </div>
       <div>
         <input className="btn" type="submit" name="submit" value="Register" />
