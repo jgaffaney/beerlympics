@@ -19,6 +19,13 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import HomePage from '../Home/HomePage';
+import Scores from '../Scores/Scores';
+import TournamentBracket from '../TournamentBracket/TournamentBracket';
+import RulesEvents from '../RulesEvents/RulesEvents';
+import TeamHome from '../Teams/TeamHome';
+import FreeAgent from '../FreeAgent/FreeAgent';
+
 
 import './App.css';
 
@@ -50,11 +57,34 @@ function App() {
             component={UserPage}>
           </ProtectedRoute>
 
-          <ProtectedRoute
+          <Route
             exact
-            path="/info"
-            component={InfoPage}>
-          </ProtectedRoute>
+            path="/first"
+            component={HomePage}>
+          </Route>
+
+          <Route
+            exact
+            path='/tournament'
+            component={TournamentBracket}>
+          </Route>
+          <Route
+            exact
+            path='/rules'
+            component={RulesEvents}>
+          </Route>
+
+          <Route
+            exact
+            path='/freeagents'
+            component={FreeAgent}>
+          </Route>
+
+          <Route
+            exact
+            path='/teams'
+            component={TeamHome}>
+          </Route>
 
           <Route
             exact
@@ -67,6 +97,11 @@ function App() {
 
           <Route
             exact
+            path="/scores">
+              <Scores />
+          </Route>
+          <Route
+            exact
             path="/registration">
             {user.id ?
               <Redirect to="/user" />
@@ -77,10 +112,10 @@ function App() {
           <Route
             exact
             path="/home">
-            {user.id ?
+            {/* {user.id ?
               <Redirect to="/user" />
-              :
-              <LandingPage />}
+              : */}
+              <LandingPage />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

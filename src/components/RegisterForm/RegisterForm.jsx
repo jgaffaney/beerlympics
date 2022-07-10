@@ -55,7 +55,7 @@ function RegisterForm() {
           />
         </label>
       </div>
-      <div>
+      {/* <div>
         <label htmlFor="firstResponder">
           Fire/PD/EMS/Medical? (optional):
           <input 
@@ -63,9 +63,9 @@ function RegisterForm() {
             name="firstResponder" 
             id="firstResponder"
             value={responder}
-            onChange={e => setResponder(!responder)}/>
+            onChange={() => setResponder(!responder)}/>
         </label>
-      </div>
+      </div> */}
       <div>
         {responder &&
         (<label htmlFor="agency">
@@ -74,7 +74,7 @@ function RegisterForm() {
             onChange={e=> setAgency(e.target.value)}/>
           </label>)}
       </div>
-      <div>
+      {/* <div>
         <label htmlFor="team">
           Team:
           <select name="team" id="team">
@@ -83,7 +83,7 @@ function RegisterForm() {
             <option value="Team3">Team 3</option>
           </select>
         </label>
-      </div>
+      </div> */}
       <div>
         <input className="btn" type="submit" name="submit" value="Register" />
       </div>
